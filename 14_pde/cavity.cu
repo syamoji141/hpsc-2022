@@ -92,8 +92,8 @@ int main() {
   double *du,*dv,*db,*dp,*dpn,*dun,*dvn;
   cudaMallocManaged(&du, nx*ny*sizeof(double));
   cudaMallocManaged(&dv, nx*ny*sizeof(double));
-  cudaMallocManaged(&dp, nx*ny*sizeof(double));
   cudaMallocManaged(&db, nx*ny*sizeof(double));
+  cudaMallocManaged(&dp, nx*ny*sizeof(double));
   cudaMallocManaged(&dpn, nx*ny*sizeof(double));
   cudaMallocManaged(&dun, nx*ny*sizeof(double));
   cudaMallocManaged(&dvn, nx*ny*sizeof(double));
@@ -126,8 +126,11 @@ int main() {
 
   cudaFree(du);
   cudaFree(dv);
-  cudaFree(dp);
   cudaFree(db);
+  cudaFree(dp);
+  cudaFree(dpn);
+  cudaFree(dun);
+  cudaFree(dvn);
 
   gettimeofday(&et, NULL);
 
